@@ -1,6 +1,6 @@
 
     <div class="col">
-        <input  class="form-control" placeholder="Buscar artista">
+        <input #termino class="form-control" (keyup)="buscar(termino.value)" placeholder="Buscar artista">
     </div>
 
     <div class="alert alert-info mt-3 text-center" role="alert" >

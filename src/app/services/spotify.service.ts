@@ -1,5 +1,9 @@
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+
+const URL = environment.spotyUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +12,30 @@ export class SpotifyService {
 
   constructor(private http:HttpClient) { }
 
-  getNewReleases() {
+  getQuery(query:string){
 
     const headers = new HttpHeaders ({
-      'Authorization': 'Bearer BQATq_xKs81Hkk0HvaSjCPbtIDOaq8n_X6VdDfmpXERkS0He7TVC9i-6QmDWsmMc8eQPujZ64vJAL51PCetI5SxyKWEn1IdinDMyt7I5EgKFr9rvuIc'
+      'Authorization': 'Bearer BQCTL2YGVWr_IKkTzKz5J1t42_UpxSGCq3KWmuY4UJLetElmAgiNpLf0iqS12MgYkEI8e2iF79yH823kCjJSVrG3BPhg2UF-YNwSzvrnTNp5Kp2qIbLeBY0M6FdL-bfACycluQKq6Kj_p8UmmuzTLIY9B5npoT7EBNm5axejSK20S-v9klqc1lmqKGGTfAaTxLA'
     });
+    
+    return this.http.get(`${URL}/${query}`, {headers})
 
-    return this.http.get(`https://api.spotify.com/v1/browse/new-releases?limit=20`, {headers});
+
+  }
+
+  getNewReleases() {    
+
+    return this.getQuery('browse/new-releases?limit=20').pipe(
+      map((res:any)=>{
+        return res.albums.items; 
+      }));;
+
+  }
+
+  getArtistas(termino:string) {
+
+    return this.getQuery(`search?query=${termino}&type=artist&market=es&limit=15`)
+
 
   }
 

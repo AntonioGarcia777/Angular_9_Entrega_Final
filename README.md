@@ -1,4 +1,4 @@
-# SpotifyApp
+# Proyecto Final de Spotify con Angular CLI versión 14.2.2
 
 Proyecto que permite mostar las nuevas canciones publicadas en Spotify y permite, además, hacer una búsqueda de diferentes artistas.
 

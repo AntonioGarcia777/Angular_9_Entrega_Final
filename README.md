@@ -1,5 +1,7 @@
 # SpotifyApp
 
+Proyecto que permite mostar las nuevas canciones publicadas en Spotify y permite hacer una búsqueda de diferentes artistas.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
 ## Development server

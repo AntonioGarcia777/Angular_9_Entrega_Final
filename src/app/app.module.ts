@@ -8,6 +8,9 @@ import { SearchComponent } from './pages/search/search.component';
 import { NavbarComponent } from './pages/shared/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ArtistaComponent } from './pages/artista/artista.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
+import { LoadingComponent } from './pages/shared/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ArtistaComponent } from './pages/artista/artista.component';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
-    ArtistaComponent
+    ArtistaComponent,
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

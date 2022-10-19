@@ -15,11 +15,10 @@ export class SpotifyService {
   getQuery(query:string){
 
     const headers = new HttpHeaders ({
-      'Authorization': 'Bearer BQBu9HsW8h-Mgk9hxPmcjaTkr4L4qIEmqGV4w9HW2G70rfQQM3jEdFOJ-CDnYAyqOl77ndb5swDhJtJ2976zEPKLIwOwmN8s5LK8i4qCXbrsbb8--2epAbKNILY4S20UKawmqswg4SbncRKJ3p7mViJVRw0R5dALlxpZEU3eXYnWTfXiKhExOuigQjYky40ftlI'
+      'Authorization': 'Bearer BQDdHD6_8BdBHfKN9epxkANHFfAtKQq4aWUsGj6dvYJydxtZkJ3LF51AwwEX-H4cJZ_vzLc8MFy8HSREpaLW8Q1fDnhaMrxid9zOnkbPmL3OC2hdIV8'
     });
     
     return this.http.get(`${URL}/${query}`, {headers})
-
 
   }
 
@@ -28,17 +27,17 @@ export class SpotifyService {
     return this.getQuery('browse/new-releases?limit=20').pipe(
       map((res:any)=>{
         return res.albums.items; 
-      }));;
+      }));
 
   }
 
   getArtistas(termino:string) {
 
-    return this.getQuery(`search?query=${termino}&type=artist&market=es&limit=15`)
-
+    return this.getQuery(`search?query=${termino}&type=artist&market=es&limit=15`).pipe(
+      map((res:any)=>{
+        return res.artists.items; 
+      }));
 
   }
-
-
 
 }

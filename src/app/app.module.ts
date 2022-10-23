@@ -11,6 +11,13 @@ import { ArtistaComponent } from './pages/artista/artista.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './pages/tarjetas/tarjetas.component';
 import { LoadingComponent } from './pages/shared/loading/loading.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +28,18 @@ import { LoadingComponent } from './pages/shared/loading/loading.component';
     ArtistaComponent,
     NoimagePipe,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    RegisterComponent,
+    LoginComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

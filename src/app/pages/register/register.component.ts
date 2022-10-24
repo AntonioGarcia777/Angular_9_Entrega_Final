@@ -29,9 +29,11 @@ export class RegisterComponent implements OnInit {
     this.userService.register(this.formReg.value)
       .then(response => {
         console.log(response);
+        alert('USUARIO REGISTRADO CON ÉXITO. Por favor ingrese su correo electrónico y su contraseña');
         this.router.navigate(['/login']);
       })
-      .catch(error => console.log(error));
+      .catch(error =>
+        console.log(error))
   }
 
 }

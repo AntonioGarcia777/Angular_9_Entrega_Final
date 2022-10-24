@@ -2,11 +2,11 @@
 <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label class="form-label">Email</label>
-        <input type="text" class="form-control" formControlName="email">
+        <input type="text" class="form-control" formControlName="email" placeholder="Ingrese su dirección de correo electrónico">
     </div>
     <div class="mb-3">
         <label class="form-label">Password</label>
-        <input type="password" class="form-control" formControlName="password">
+        <input type="password" class="form-control" formControlName="password" placeholder="La contraseña debe tener 6 caracteres como mínimo">
     </div>
     <input type="submit" value="Enviar">
 </form>

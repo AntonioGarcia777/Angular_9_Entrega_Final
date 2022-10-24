@@ -27,10 +27,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.userService.login(this.formLogin.value)
-      .then(response => {
+      .then((response) => {
         console.log(response);
+        this.router.navigate(['/home']);
       })
-      .catch(error => console.log(error));
+      .catch((error) => {
+         console.log(error);
+         alert('USUARIO NO REGISTRADO. Por favor ingrese su correo electrónico y una contraseña para registarse');
+         this.router.navigate(['/register']);
+        });
   }  
 
 }

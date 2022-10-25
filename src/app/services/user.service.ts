@@ -21,9 +21,8 @@ export class UserService {
   }
 
   logout() {
-
+    
     return signOut(this.auth);
-
 
   }
 

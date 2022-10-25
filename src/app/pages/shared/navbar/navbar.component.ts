@@ -15,7 +15,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick() {
+  onClickRegister() {      
+      this.router.navigate(['/register']);      
+  }
+
+  onClickLogin() {
     this.userService.logout()
       .then(() => {
         this.router.navigate(['/login']);

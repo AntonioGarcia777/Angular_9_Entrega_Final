@@ -1,6 +1,6 @@
 # Proyecto Final de Spotify con Angular CLI versión 14.2.2
 
-Proyecto que permite mostar las nuevas canciones publicadas en Spotify y permite, además, hacer una búsqueda de diferentes artistas.
+Proyecto que permite mostar las nuevas canciones publicadas en Spotify y habilita efectuar una búsqueda de diferentes artistas.  También permite entrar al perfil de cada uno de ellos para ver datos de relevancia y acceder a la plataforma web para escuchar sus canciones.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
